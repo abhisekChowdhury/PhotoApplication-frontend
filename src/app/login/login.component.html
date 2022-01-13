@@ -1,0 +1,53 @@
+<p>login works!</p>
+
+<div style="width: 50%; margin: auto;" *ngIf="loginFormVisible; else signUpForm">
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active">Log In</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="makeSignUpFormVisible()">Sign Up</a>
+    </li>
+  </ul>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" [(ngModel)]="email" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" [(ngModel)]="password" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="login()">Log In</button>
+    <!-- <button type="submit" class="btn btn-primary" (click)="signOut()">Sign Out</button> -->
+</div>
+
+
+<ng-template #signUpForm>
+    <div style="width: 50%; margin: auto">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link" (click)="makeLogInFormVisible()">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" >Sign Up</a>
+            </li>
+          </ul>
+        
+            <div class="form-group">
+              <label for="inputName">Name</label>
+              <input type="text" class="form-control" [(ngModel)]="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" [(ngModel)]="email" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" [(ngModel)]="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="signup()">Sign Up</button>
+        </div>
+</ng-template>

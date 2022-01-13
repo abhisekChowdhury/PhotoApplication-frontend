@@ -1,0 +1,19 @@
+<!-- Most recent albums will be listed here!
+
+<ul>
+    <li *ngFor="let album of albums">{{album.albumId}}--{{album.coverPicUrl}}--{{album.createdBy}}--{{album.dateCreated}}--{{album.name}}</li>
+</ul> -->
+
+<h2>Recent Albums</h2>
+
+<div class="row">
+    <div class="col-sm-3 pt-3" *ngFor="let album of albums">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" [src]="album.coverPicUrl" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{album.name}}</h5>
+                    <a [routerLink]="['/album',album.albumId]" class="btn btn-primary">Go to Album</a>
+            </div>
+        </div>
+    </div>
+</div>
