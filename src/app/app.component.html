@@ -5,7 +5,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto" *ngIf="userService.userData | async">
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/albums/recent']">Home</a>
       </li>
@@ -15,17 +15,24 @@
       <li class="nav-item">
           <a class="nav-link" [routerLink]="['/albums/me']">Albums</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/login']">Login</a>
-    </li>
     </ul>
 
-    <div class="float-right" style="padding-right: 30px; padding-top: 20px;" *ngIf="userService.userData">
+    <div class="float-right" style="padding-right: 30px; padding-top: 20px;" *ngIf="userService.userData | async">
       <a class="btn btn-danger" (click)="logout()">
           Logout
       </a>
   </div>
   </div>
 </nav>
+
+<div *ngFor="let message of messageService.messages">
+  <div class="alert alert-danger" role="alert">
+    {{message}}
+  </div>
+</div>
+
+<div *ngIf="messageService.messages.length">
+  <button type="button" class="btn btn-info" (click)="clearMessages()">Clear</button>
+</div>
 
 <router-outlet></router-outlet>

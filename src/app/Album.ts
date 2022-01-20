@@ -1,7 +1,7 @@
-export class Album{
-    albumId!: string;
-    coverPicUrl!: string;
-    createdBy!: string;
-    dateCreated!: string;
-    name!: string;
+export class Album {
+    coverPhotoUrl!:	string;
+    createdBy!:	string;
+    dateCreated!:string;
+    id!:	string;
+    name!:	string;
 }

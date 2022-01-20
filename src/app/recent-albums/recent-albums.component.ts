@@ -8,7 +8,6 @@ import { AlbumService } from '../album.service';
   styleUrls: ['./recent-albums.component.css']
 })
 export class RecentAlbumsComponent implements OnInit {
-
   albums!: Album[];
 
   constructor(private albumService: AlbumService) { }

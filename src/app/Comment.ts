@@ -1,7 +1,7 @@
-export class Comment{
-    createdBy!: string
-    dateCreated!: string
-    id!: string
-    message!: string
-    photoId!: string
+export class Comment {
+    createdBy!:	string;
+    message!:	string;
+    dateCreated!:string;
+    id!:	string;
+    photoId!:	string;
 }

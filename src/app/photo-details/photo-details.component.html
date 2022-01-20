@@ -1,1 +1,42 @@
-<p>photo-details works!</p>
+<h2>Photo</h2>
+<div class="float-right" style="float:right; padding-right: 30px; padding-top: 20px;">
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        <div class="btn-group" role="group">
+          <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Make this
+          </button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <a class="dropdown-item" (click)="makeProfilePhoto()">Profile Photo</a>
+            <a class="dropdown-item" href="#">Album Cover</a>
+          </div>
+        </div>
+      </div>
+</div><br>
+
+<div *ngIf="photo" style="width: 450px; margin:auto;">
+    Image
+    <p>{{photo['id']}}</p>
+    <img [src]="photo.photoUrl" class="rounded" width="450px"/>
+</div>
+
+<br>
+
+<h3>Comments: </h3>
+
+<div style="width: 600px; margin:auto;">
+<div class="form-group">
+    <textarea class="form-control" rows="3" [(ngModel)]="newComment"></textarea>
+  </div>
+
+  <div class="float-right">
+  <button type="button" class="btn btn-primary" [disabled]="!newComment" (click)="saveComment()">Post Comment</button>
+  <button type="button" class="btn btn-primary"(click)="loadCommentsReverse()">Change order</button>
+</div>
+<br>
+
+<div *ngIf="allComments">
+    <div class="alert alert-primary" style="text-align: left;" role="alert" *ngFor="let comment of allComments">
+        {{comment.message}} -- {{comment.dateCreated}}
+    </div>
+</div>
+</div>
