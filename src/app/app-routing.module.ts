@@ -11,6 +11,7 @@ import { UploadPictureComponent } from './upload-picture/upload-picture.componen
 import { UserService } from './user.service';
 
 const routes: Routes = [
+  {path: '', component: LoginComponent},
   {path: 'albums/recent', component: RecentAlbumsComponent, canActivate: [UserService]},
   {path: 'login', component: LoginComponent},
   {path: 'albums/me', component: MyAlbumsComponent, canActivate: [UserService]},
