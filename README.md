@@ -1,5 +1,7 @@
 # MyPhotoApplication
 
+Link to application: http://photo-application-bucket.s3-website.us-east-2.amazonaws.com/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
 ## Development server
